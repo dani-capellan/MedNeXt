@@ -99,6 +99,25 @@ class nnUNetTrainerV2_MedNeXt_M_kernel3(nnUNetTrainerV2_Optim_and_LR):
             self.network.cuda()
 
 
+class nnUNetTrainerV2_MedNeXt_M_kernel3_150epochs(nnUNetTrainerV2_MedNeXt_M_kernel3):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.max_num_epochs = 150
+        
+class nnUNetTrainerV2_MedNeXt_M_kernel3_200epochs(nnUNetTrainerV2_MedNeXt_M_kernel3):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.max_num_epochs = 200
+
+class nnUNetTrainerV2_MedNeXt_M_kernel3_150epochs_StratifiedSplit(nnUNetTrainerV2_MedNeXt_M_kernel3_150epochs):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+class nnUNetTrainerV2_MedNeXt_M_kernel3_200epochs_StratifiedSplit(nnUNetTrainerV2_MedNeXt_M_kernel3_200epochs):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+
 class nnUNetTrainerV2_MedNeXt_L_kernel3(nnUNetTrainerV2_Optim_and_LR):   
         
     def initialize_network(self):
